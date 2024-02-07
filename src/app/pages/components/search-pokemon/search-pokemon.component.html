@@ -1,0 +1,16 @@
+<section class="container">
+  <button
+    (click)="handleSearchPage(previous || null)"
+    class="btn"
+    [disabled]="this.previous === null"
+  >
+    &#8592;
+  </button>
+  <button
+    (click)="handleSearchPage(next || null)"
+    class="btn"
+    [disabled]="this.next === null"
+  >
+    &#8594;
+  </button>
+</section>
