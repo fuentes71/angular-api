@@ -1,2 +1,17 @@
-<search-pokemon (dataSet)="changeGet($event)"></search-pokemon>
-<list-card [receivedChange]="receivedChange"></list-card>
+<main>
+  <div *ngIf="!pokemons.length; else content">
+    <img src="../../../../assets/pokeball.svg" class="loading" alt="" />
+  </div>
+  <ng-template #content>
+    <list-card [pokemons]="pokemons"></list-card>
+    <div>
+      <button
+      class="btn"
+        (click)="handleSearchPage(this.next!)"
+        [disabled]="this.next ? false : false"
+      >
+        Buscar mais Pokemon
+      </button>
+    </div>
+  </ng-template>
+</main>

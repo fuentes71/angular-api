@@ -1,0 +1,9 @@
+<section class="container-list">
+  <div *ngIf="!pokemons.length; else cardsPoke">
+  </div>
+  <ng-template #cardsPoke class="content-card">
+    <ul>
+      <card *ngFor="let pokemon of pokemons" [pokemon]="pokemon" />
+    </ul>
+  </ng-template>
+</section>

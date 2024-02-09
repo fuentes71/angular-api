@@ -1,0 +1,37 @@
+
+div{
+display: flex;
+align-items: center;
+justify-content: center;
+  .btn{
+    position: fixed;
+    bottom: 30px;
+    border: none;
+    background: linear-gradient(to bottom right, #ffcc00, #ff6699, #6600ff);
+    color: white;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    border-radius: 3px;
+    padding: 5px 10px;
+    cursor: pointer;
+    &:disabled{
+      filter: grayscale(70%);
+      cursor: default;
+    }
+  }
+}
+
+.loading{
+    position: absolute;
+    top: calc(50% - 20px);
+    left: calc(50% - 40px);
+    animation: animationLoading 2s infinite ease-in-out; 
+  }
+  @keyframes animationLoading {
+   to{
+   transform: rotate(0deg);
+   }
+   from{
+   transform: rotate(360deg);
+   }
+  }

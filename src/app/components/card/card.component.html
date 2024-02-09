@@ -1,0 +1,47 @@
+<li
+  class="container"
+  [style.background]="'var(--bg-' + pokemon?.backgroundColor + ')'"
+  [style.border]="'3px solid var(--type-' + pokemon?.backgroundColor + ')'"
+>
+  <div class="content">
+    <div class="container-info">
+      <h1>
+        {{ pokemon?.name?.charAt(0)?.toLocaleUpperCase()
+        }}{{ pokemon?.name?.slice(1) }}
+      </h1>
+      <div class="container-types">
+        <span
+          [style.background]="' var(--type-' + pokemon?.backgroundColor + ')'"
+        >
+          <img
+            src="../../../assets/types/{{ pokemon!.types[0]?.type.name }}.svg"
+            alt=""
+          />
+          <p>
+            {{ pokemon!.types[0]?.type.name }}
+          </p>
+        </span>
+        @if (pokemon!.types[1]?.type.name) {
+        <span
+          [style.background]="' var(--type-' + pokemon?.backgroundColor + ')'"
+        >
+          <img
+            src="../../../assets/types/{{ pokemon!.types[1]?.type.name }}.svg"
+            alt=""
+          />
+          <p>
+            {{ pokemon!.types[1]?.type.name }}
+          </p>
+        </span>
+        }
+      </div>
+    </div>
+    <div class="container-img">
+      <img class="icon" src="../../../assets/pokeball.svg"/>      <img
+        class="img-pokemon"
+        src="{{ pokemon?.sprites }}"
+        alt="imagem do pokemon {{ pokemon?.name }}"
+      />
+    </div>
+  </div>
+</li>

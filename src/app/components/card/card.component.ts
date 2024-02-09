@@ -1,11 +1,10 @@
 import { Component, Input } from '@angular/core';
-import { Pokemon } from '../../../../../app/Shared/interface/pokemon';
-import { NgFor } from '@angular/common';
+import { Pokemon } from '../../core/interface/pokemon';
+
 
 @Component({
+  standalone:true,
   selector: 'card',
-  standalone: true,
-  imports: [NgFor],
   templateUrl: './card.component.html',
   styleUrl: './card.component.scss'
 })

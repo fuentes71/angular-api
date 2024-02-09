@@ -14,12 +14,12 @@ export class PokemonService {
 
   private pokemon:Pokemon[] = []
 
-  getAllPokemon(url: string | null){
+
+  getAllPokemon(url: string | null):Observable<any>      {
     return this.http.get<any>(url ?? this.url).pipe(
       catchError((err)=>{
         console.log(err);
         return of(undefined)
-        
       })
     )
   }
@@ -36,6 +36,8 @@ export class PokemonService {
 
   setPokemon(pokemon:Pokemon[]){
     this.pokemon = pokemon
+    
+    console.log(pokemon);
     
   }
 
