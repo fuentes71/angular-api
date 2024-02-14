@@ -1,4 +1,4 @@
-import { Component, OnInit, afterNextRender, afterRender } from '@angular/core';
+import { Component, OnInit, } from '@angular/core';
 import { PokemonService } from '../../core/service/pokemon.service';
 import { Pokemon } from '../../core/interface/pokemon';
 import { ListCardComponent } from './components/listCard/listCard.component';
@@ -11,7 +11,7 @@ import { NgIf } from '@angular/common';
   templateUrl: './poke-page.component.html',
   styleUrl: './poke-page.component.scss',
 })
-export class PokePageComponent {
+export class PokePageComponent implements OnInit{
   next?: string;
   pokemons: Pokemon[] = [];
 
@@ -20,9 +20,13 @@ export class PokePageComponent {
   }
 
   ngOnInit(): void {
+    console.log("test");
+    
+    
     this.handleSearchPage
     (this.pokemonService.url);
   }
+  
   handleSearchPage(url: string | null): void {
     this.pokemonService.getAllPokemon(url).subscribe((res: any) => {
       if (res?.results) {
